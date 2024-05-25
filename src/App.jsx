@@ -4,15 +4,21 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import injectContext from './store/Appcontext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import NotFound from './pages/NotFound'
+import Nav from './componentes/Nav'
+import People from './pages/People'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
+    <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<People  />} />
+
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

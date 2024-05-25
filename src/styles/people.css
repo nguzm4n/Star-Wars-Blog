@@ -1,0 +1,7 @@
+/* styles.css */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100vw;
+}
