@@ -1,6 +1,6 @@
 import React from 'react'
 import images from '../Images/images.png'
-
+import wall from '../Images/wall.jpg'
 
 const Detailcharacter = ({ name, gender, birth, eyecolor, skincolor, haircolor, mass, height }) => {
 
@@ -11,7 +11,7 @@ const Detailcharacter = ({ name, gender, birth, eyecolor, skincolor, haircolor, 
             <div className="card mb-3" style={{ maxWidth: "800px" }}>
                 <div className="row g-0 ">
                     <div className="col-md-4">
-                        <img src={images} className="img-fluid rounded-start" alt="..." style={{ width: "800px" }} />
+                        <img src={wall} className="img-fluid rounded-start" alt="..." style={{ width: "800px" }} />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">

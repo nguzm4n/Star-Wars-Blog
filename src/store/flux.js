@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             character:{},
             planet: {},
             vehicle:{},
-            favorites: {}
+            favorites: []
             
 
         },
@@ -124,7 +124,25 @@ const getState = ({ getStore, getActions, setStore }) => {
                 } catch (error) {
                     console.log(error.message)
                 }
-            }
+            },
+
+            setFavorite: (name) => {
+                const store = getStore();
+                setStore({...store })
+                if (!store.favorites.includes(name)) {
+                    store.favorites.push(name);
+                }
+                console.log("agregado a favoritos")
+            },
+
+            removeFavorite: (event, name) => {
+                event.stopPropagation() 
+                const store = getStore();
+                
+            
+                const updatedFavorites = store.favorites.filter(favorite => favorite !== name);
+                setStore({ favorites: updatedFavorites });
+            },
 
         }
     }
