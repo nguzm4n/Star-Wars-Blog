@@ -2,65 +2,68 @@ import React, { useContext, useEffect } from 'react';
 import { Context } from '../store/Appcontext';
 import Card from '../componentes/Card';
 import '../styles/people.css'
+import Cardplanet from '../componentes/Cardplanet'
+import Cardvehicle from '../componentes/Cardvehicle'
+
 
 const People = () => {
     const { store, actions } = useContext(Context);
 
 
 
-    const handleCharacter = async (id) =>  {
-        try {
-            const url = `https://www.swapi.tech/api/people/${id}`;
-            const options = {
-                method: "GET",
-                headers: { 'Content-Type': 'application/json' }
-            }
+    // const handleCharacter = async (id) =>  {
+    //     try {
+    //         const url = `https://www.swapi.tech/api/people/${id}`;
+    //         const options = {
+    //             method: "GET",
+    //             headers: { 'Content-Type': 'application/json' }
+    //         }
 
-            const response = await fetch(url, options)
-            const datos = await response.json()
-            const store = getStore();
-            setStore({...store, characters: datos })
-            console.log("Personajes obtenidos")
-        } catch (error) {
-            console.log(error.message)
-        }
-    }
+    //         const response = await fetch(url, options)
+    //         const datos = await response.json()
+    //         const store = getStore();
+    //         setStore({...store, characters: datos })
+    //         console.log("Personajes obtenidos")
+    //     } catch (error) {
+    //         console.log(error.message)
+    //     }
+    // }
 
-    const handleVehicle = async (id) =>  {
-        try {
-            const url = `https://www.swapi.tech/api/vehicles/${id}`;
-            const options = {
-                method: "GET",
-                headers: { 'Content-Type': 'application/json' }
-            }
+    // const handleVehicle = async (id) =>  {
+    //     try {
+    //         const url = `https://www.swapi.tech/api/vehicles/${id}`;
+    //         const options = {
+    //             method: "GET",
+    //             headers: { 'Content-Type': 'application/json' }
+    //         }
 
-            const response = await fetch(url, options)
-            const datos = await response.json()
-            const store = getStore();
-            setStore({...store, characters: datos })
-            console.log("Personajes obtenidos")
-        } catch (error) {
-            console.log(error.message)
-        }
-    }
+    //         const response = await fetch(url, options)
+    //         const datos = await response.json()
+    //         const store = getStore();
+    //         setStore({...store, characters: datos })
+    //         console.log("Personajes obtenidos")
+    //     } catch (error) {
+    //         console.log(error.message)
+    //     }
+    // }
 
-    const handlePlanet = async (id) =>  {
-        try {
-            const url = `https://www.swapi.tech/api/planets/${id}`;
-            const options = {
-                method: "GET",
-                headers: { 'Content-Type': 'application/json' }
-            }
+    // const handlePlanet = async (id) =>  {
+    //     try {
+    //         const url = `https://www.swapi.tech/api/planets/${id}`;
+    //         const options = {
+    //             method: "GET",
+    //             headers: { 'Content-Type': 'application/json' }
+    //         }
 
-            const response = await fetch(url, options)
-            const datos = await response.json()
-            const store = getStore();
-            setStore({...store, characters: datos })
-            console.log("Personajes obtenidos")
-        } catch (error) {
-            console.log(error.message)
-        }
-    }
+    //         const response = await fetch(url, options)
+    //         const datos = await response.json()
+    //         const store = getStore();
+    //         setStore({...store, characters: datos })
+    //         console.log("Personajes obtenidos")
+    //     } catch (error) {
+    //         console.log(error.message)
+    //     }
+    // }
 
 
 
@@ -82,6 +85,8 @@ const People = () => {
                             name={personaje.name}
                             id={personaje.uid}
                             key={personaje.uid}
+                            moreInfo={() => {actions.handleCharacter(personaje.uid)}}
+                            description="A person within the Star Wars universe"
                         />
                     )) : <h4>loading</h4>}
                 </div>
@@ -91,10 +96,13 @@ const People = () => {
             <div className='row'>
                 <div className='col-12 scroll-container'>
                     {store.vehicles.results ? store.vehicles.results.map((vehicle) => (
-                        <Card
+                        <Cardvehicle
                             name={vehicle.name}
                             id={vehicle.uid}
                             key={vehicle.uid}
+                            moreInfo={() => {actions.handleVehicle(vehicle.uid)}}
+                            description="A Vehicle within the Star Wars universe"
+                            
                         />
                     )) : <h4>loading</h4>}
                 </div>
@@ -104,10 +112,12 @@ const People = () => {
             <div className='row'>
                 <div className='col-12 scroll-container'>
                     {store.planets.results ? store.planets.results.map((planet) => (
-                        <Card
+                        <Cardplanet
                             name={planet.name}
                             id={planet.uid}
                             key={planet.uid}
+                            moreInfo={() => {actions.handlePlanet(planet.uid)}}
+                            description="A planet within the Star Wars universe"
                         />
                     )) : <h4>loading</h4>}
                 </div>

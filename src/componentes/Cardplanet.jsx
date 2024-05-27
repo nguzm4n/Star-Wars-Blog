@@ -11,7 +11,7 @@ const Card = ({name, moreInfo, description}) => {
                     <div className="card-body">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{description}</p>
-                        <Link to="/character" className="btn btn-primary me-5" onClick={moreInfo} >Learn More</Link>     <FaRegHeart className='ms-5'  onClick={moreInfo}/>
+                        <Link to="/planet" className="btn btn-primary me-5" onClick={moreInfo} >Learn More</Link>     <FaRegHeart className='ms-5'  onClick={moreInfo}/>
                     </div>
             </div>
         </div>

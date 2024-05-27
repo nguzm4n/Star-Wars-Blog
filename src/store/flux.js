@@ -3,7 +3,11 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             characters: {},
             planets: {},
-            vehicles: {}
+            vehicles: {},
+            character:{},
+            planet: {},
+            vehicle:{},
+            favorites: {}
             
 
         },
@@ -67,6 +71,59 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log(error.message)
                 }
 
+            },
+             handleCharacter: async (id) =>  {
+                try {
+                    const url = `https://www.swapi.tech/api/people/${id}`;
+                    const options = {
+                        method: "GET",
+                        headers: { 'Content-Type': 'application/json' }
+                    }
+        
+                    const response = await fetch(url, options)
+                    const datos = await response.json()
+                    const store = getStore();
+                    setStore({...store, character: datos })
+                    console.log("Personaje obtenidos")
+                } catch (error) {
+                    console.log(error.message)
+                }
+            },
+
+            handleVehicle: async (id) =>  {
+                try {
+                    const url = `https://www.swapi.tech/api/vehicles/${id}`;
+                    const options = {
+                        method: "GET",
+                        headers: { 'Content-Type': 'application/json' }
+                    }
+        
+                    const response = await fetch(url, options)
+                    const datos = await response.json()
+                    const store = getStore();
+                    setStore({...store, vehicle: datos })
+                    console.log("Vehiculo obtenidos")
+                } catch (error) {
+                    console.log(error.message)
+                }
+            },
+
+            handlePlanet: async (id) =>  {
+                try {
+                    const url = `https://www.swapi.tech/api/planets/${id}`;
+                    const options = {
+                        method: "GET",
+                        headers: { 'Content-Type': 'application/json' }
+                    }
+        
+                    const response = await fetch(url, options)
+                    const datos = await response.json()
+                    const store = getStore();
+                    setStore({...store, planet: datos })
+                    console.log("Planeta obtenidos")
+                } catch (error) {
+                    console.log(error.message)
+                }
             }
 
         }
