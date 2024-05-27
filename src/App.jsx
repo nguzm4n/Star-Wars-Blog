@@ -17,7 +17,6 @@ function App() {
     <Nav />
       <Routes>
         <Route path="/" element={<People  />} />
-
         <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>

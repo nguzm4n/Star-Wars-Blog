@@ -6,6 +6,64 @@ import '../styles/people.css'
 const People = () => {
     const { store, actions } = useContext(Context);
 
+
+
+    const handleCharacter = async (id) =>  {
+        try {
+            const url = `https://www.swapi.tech/api/people/${id}`;
+            const options = {
+                method: "GET",
+                headers: { 'Content-Type': 'application/json' }
+            }
+
+            const response = await fetch(url, options)
+            const datos = await response.json()
+            const store = getStore();
+            setStore({...store, characters: datos })
+            console.log("Personajes obtenidos")
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    const handleVehicle = async (id) =>  {
+        try {
+            const url = `https://www.swapi.tech/api/vehicles/${id}`;
+            const options = {
+                method: "GET",
+                headers: { 'Content-Type': 'application/json' }
+            }
+
+            const response = await fetch(url, options)
+            const datos = await response.json()
+            const store = getStore();
+            setStore({...store, characters: datos })
+            console.log("Personajes obtenidos")
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    const handlePlanet = async (id) =>  {
+        try {
+            const url = `https://www.swapi.tech/api/planets/${id}`;
+            const options = {
+                method: "GET",
+                headers: { 'Content-Type': 'application/json' }
+            }
+
+            const response = await fetch(url, options)
+            const datos = await response.json()
+            const store = getStore();
+            setStore({...store, characters: datos })
+            console.log("Personajes obtenidos")
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+
+
     useEffect(() => {
         actions.getCharacters();
         actions.getVehicles();
