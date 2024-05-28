@@ -13,7 +13,7 @@ const Card = ({name, moreInfo, description, favorito, deleteFav}) => {
                     <div className="card-body">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{description}</p>
-                        <Link to="/planet" className="btn btn-outline-info me-5" onClick={moreInfo} >Learn More</Link>     {store.favorites.includes(name) ? <FaHeart ize={25}  className='ms-5' onClick={deleteFav}/> : <FaRegHeart size={25}  className='ms-5'  onClick={favorito}/>}
+                        <Link to="/planet" className="btn btn-outline-info me-5" onClick={moreInfo} >Learn More</Link>     {store.favorites.includes(name) ? <FaHeart size={25}  className='ms-5' onClick={deleteFav}/> : <FaRegHeart size={25}  className='ms-5'  onClick={favorito}/>}
                     </div>
             </div>
         </div>
