@@ -90,7 +90,7 @@ const People = () => {
                             favorito={() => actions.setFavorite(personaje.name)}
                             deleteFav={(e) => actions.removeFavorite(e, personaje.name)}
                         />
-                    )) : <h4>loading</h4>}
+                    )) : <p>loading</p>}
                 </div>
             </div>
 
@@ -107,7 +107,7 @@ const People = () => {
                             favorito={() => actions.setFavorite(vehicle.name)}
                             deleteFav={(e) => actions.removeFavorite(e, vehicle.name)}
                         />
-                    )) : <h4>loading</h4>}
+                    )) : <p>loading</p>}
                 </div>
             </div>
 
@@ -125,7 +125,7 @@ const People = () => {
                             deleteFav={(e) => actions.removeFavorite(e, planet.name)}
                             
                         />
-                    )) : <h4>loading</h4>}
+                    )) : <p>loading</p>}
                 </div>
             </div>
         </div>

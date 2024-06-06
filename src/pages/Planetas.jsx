@@ -11,15 +11,15 @@ const Planetas = () => {
   return (
     <div>
       <Detailplanet
-      name={store.planet.result ? store.planet.result.properties.name : <h3>loading...</h3>}
-      surface={store.planet.result ? store.planet.result.properties.surface_water : <h3>loading...</h3>}
-      terrain={store.planet.result ? store.planet.result.properties.terrain : <h3>loading...</h3>}
-      climate={store.planet.result ? store.planet.result.properties.climate : <h3>loading...</h3>}
-      population={store.planet.result ? store.planet.result.properties.population : <h3>loading...</h3>}
-      gravity={store.planet.result ? store.planet.result.properties.gravity : <h3>loading...</h3>}
-      orbitalp={store.planet.result ? store.planet.result.properties.orbital_period : <h3>loading...</h3>}
-      rotationp={store.planet.result ? store.planet.result.properties.rotation_period : <h3>loading...</h3>}
-      diameter={store.planet.result ? store.planet.result.properties.diameter : <h3>loading...</h3>}
+      name={store.planet.result ? store.planet.result.properties.name : <p>loading...</p>}
+      surface={store.planet.result ? store.planet.result.properties.surface_water : <p>loading...</p>}
+      terrain={store.planet.result ? store.planet.result.properties.terrain : <p>loading...</p>}
+      climate={store.planet.result ? store.planet.result.properties.climate : <p>loading...</p>}
+      population={store.planet.result ? store.planet.result.properties.population : <p>loading...</p>}
+      gravity={store.planet.result ? store.planet.result.properties.gravity : <p>loading...</p>}
+      orbitalp={store.planet.result ? store.planet.result.properties.orbital_period : <p>loading...</p>}
+      rotationp={store.planet.result ? store.planet.result.properties.rotation_period : <p>loading...</p>}
+      diameter={store.planet.result ? store.planet.result.properties.diameter : <p>loading...</p>}
       
       
       
